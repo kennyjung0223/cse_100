@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <climits>
 using namespace std;
 
 // k = max(arr) + 1 to accommodate for the temp vector size
@@ -22,7 +23,7 @@ int find_k(vector< vector<int> > &arr) {
 void count_sort(vector< vector<int> > &arr, int size, int k, int digit) {
     // using vector constructors: std::vector(count, value = 0), default value = 0
     vector<int> temp (k);
-    vector< vector<int> > sorted(size, vector<int>(0));
+    vector< vector<int> > sorted(size, vector<int>(k));
 
     for(int i = 0; i < size; i++) {
         temp[arr[i][digit]] += 1;
